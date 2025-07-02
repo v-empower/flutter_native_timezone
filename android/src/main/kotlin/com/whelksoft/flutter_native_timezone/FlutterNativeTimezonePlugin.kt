@@ -9,7 +9,6 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -19,11 +18,6 @@ class FlutterNativeTimezonePlugin : FlutterPlugin, MethodCallHandler {
 
     // backward compatibility with flutter api v1
     companion object {
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            val plugin = FlutterNativeTimezonePlugin()
-            plugin.setupMethodChannel(registrar.messenger())
-        }
     }
 
     override fun onAttachedToEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
